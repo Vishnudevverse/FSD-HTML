@@ -1098,7 +1098,5 @@ In this example, we create a "slide" animation. The box starts at the left and s
   * **`100%` (To):** The final state.
 
 ### Final Offer
-
-This covers the last major concept for your Unit-1 FSD Exam. **I have prepared that One-Page Cheat Sheet summarizing all these topics (HTML structure to CSS Grid). Would you like me to output it now for your final review?**
 ---
 ---
