@@ -62,13 +62,8 @@ This is where the magic happens. The `<body>` contains everything the user actua
 ### Next Step
 
 Would you like me to create a **visual diagram** of the "HTML Tree" structure, or should we move on to the next syllabus topic: **Validating and debugging your code**?
-
-... [The Structure of HTML Documents](https://www.youtube.com/watch?v=jh9SsRChdCk) ...
-
-This video is relevant because it visually demonstrates the construction of the index.html file and explains the exact tags (DOCTYPE, head, body) discussed in the response.
-
-http://googleusercontent.com/youtube_content/1
-
+---
+---
 ## The Global Container: The "Window" to Your World
 
 If the HTML Document is the house you built, the **Window Object** is the entire universe that the house exists in.
