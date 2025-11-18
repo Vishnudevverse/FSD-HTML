@@ -224,8 +224,7 @@ Here is a classic beginner mistake and how to fix it.
 ---
 ---
 https://www.w3schools.com/html/html_tables.asp
-
-
+https://www.w3schools.com/css/css_table.asp
 ---
 ---
 ---
