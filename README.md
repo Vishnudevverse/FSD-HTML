@@ -219,3 +219,13 @@ Here is a classic beginner mistake and how to fix it.
 | **Feedback** | A list of errors with line numbers | Visual representation of the DOM |
 | **Interactivity** | Static (Upload and wait) | Dynamic (Edit code and see changes instantly) |
 | **Error Type** | Syntax errors (Missing tags, bad attributes) | Logic/Visual errors (Wrong margins, layout breaks) |
+
+---
+---
+---
+https://www.w3schools.com/html/html_tables.asp
+
+
+---
+---
+---
