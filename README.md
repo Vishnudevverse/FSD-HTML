@@ -227,4 +227,96 @@ https://www.w3schools.com/html/html_tables.asp
 https://www.w3schools.com/css/css_table.asp
 ---
 ---
+https://www.google.com/search?q=inline+css+external+css+internal+css&oq=inline+css+external+css+internal+css&gs_lcrp=EgRlZGdlKg8IABBFGDkYkQIYgAQYigUyDwgAEEUYORiRAhiABBiKBTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB7SAQg4NzQ4ajBqMagCALACAA&sourceid=chrome&ie=UTF-8
+---
+---
+
+### The Voice of Your Website: Typography
+
+If HTML is the structure of your house, and the content is the words you speak, then **Fonts** are the *tone of voice* you use to speak them.
+
+Imagine reading a horror story written in a bubbly, pink, comic-book font. It wouldn't be scary; it would be ridiculous. Conversely, a formal business contract written in messy handwriting would look unprofessional. In web development, applying fonts is how we control this atmosphere. We do this using the CSS property `font-family`.
+
+When you tell a browser to use a font, you aren't just giving it a single command; you are giving it a prioritized list of instructions. This is called the **Font Stack**. You are essentially telling the browser: "Please use Font A. If you don't have Font A, try Font B. If you have neither, just use whatever default you have."
+
+### 1\. The Reliable Standard: Web-Safe Fonts
+
+For the first 20 years of the web, we were limited to "Web-Safe Fonts." These are fonts that are pre-installed on 99% of computers (Windows, Mac, Linux). They are the "safety net" of the internet.
+
+If you ask for a font that the user doesn't have installed on their laptop, the text will revert to a boring default (usually Times New Roman). To prevent this, developers stick to a list of universally available fonts.
+
+**Common Categories:**
+
+  * **Serif (e.g., Times New Roman, Georgia):** These have little "feet" or decorative lines at the ends of letters. They feel traditional, formal, and authoritative.
+  * **Sans-Serif (e.g., Arial, Verdana):** "Sans" means "without." These letters have no feet. They look clean, modern, and digital.
+  * **Monospace (e.g., Courier New):** Every letter takes up the exact same width. This is used for code blocks.
+
+### 2\. The Modern Era: Custom Fonts (Web Fonts)
+
+Today, we are no longer trapped by the default fonts. We can use **Custom Fonts** (often called Web Fonts). This technology allows the browser to download a font file from a server (like Google Fonts) instantly when the page loads, just like it downloads an image.
+
+This opened up a world of creativity. You can now use handwriting fonts, futuristic sci-fi fonts, or elegant calligraphy, ensuring every user sees exactly what you designed, regardless of what is installed on their computer.
+
+### Code Example: The Tale of Two Fonts
+
+In this example, we will apply a standard "Web-Safe" font to our paragraphs and a fancy "Custom" font (Google Font) to our header.
+
+**Instructions for the code below:**
+
+1.  We link to Google Fonts in the `<head>` to get a font called "Lobster" (a popular cursive font).
+2.  We use CSS to assign "Lobster" to the `<h1>`.
+3.  We assign standard "Arial" to the `<p>`.
+
+<!-- end list -->
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <style>
+        h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 48px;
+            color: navy;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Custom Title</h1>
+    <p>This paragraph uses a web-safe font. It is clean, readable, and works on every computer in the world without downloading anything.</p>
+
+</body>
+</html>
+```
+
+### The Strategy: The Fallback System
+
+Notice in the code above for the paragraph: `font-family: Arial, Helvetica, sans-serif;`.
+
+This is the **Fallback Chain**:
+
+1.  **First Choice:** "Check if the user has **Arial**."
+2.  **Second Choice:** "If not (maybe they are on a Mac that prefers Helvetica), use **Helvetica**."
+3.  **Last Resort:** "If they have neither, use any generic **sans-serif** font the system has."
+
+### Comparison: Web-Safe vs. Custom Fonts
+
+| Feature | Web-Safe Fonts | Custom Fonts (Web Fonts) |
+| :--- | :--- | :--- |
+| **Source** | Pre-installed on the user's device (OS). | Downloaded from the web (e.g., Google Fonts). |
+| **Reliability** | 100% Reliable. No loading time. | Depends on internet connection. Needs to load. |
+| **Creativity** | Low. Limited to basic styles (Arial, Times). | Unlimited. Unique branding and personality. |
+| **Performance** | Fastest (Zero download required). | Slower (Browser must fetch the font file). |
+| **Example** | `font-family: Arial;` | `@import url('https://fonts.googleapis.com/css?family=Roboto');` |
+
+### Next Step
+
+Now that we have handled the typography, would you like to explore **Working with Colors, Images, and Multimedia** to bring visual life to the text, or move to the **CSS Box Model**?
 ---
