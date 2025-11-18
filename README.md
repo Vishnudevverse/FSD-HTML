@@ -916,5 +916,116 @@ This table is the "Cheat Sheet" you need to memorize for the exam to distinguish
 | **Alignment Control** | Very Poor (Requires margins). | **Excellent** (Centering is easy). | **Excellent** (Precise cell placement). |
 | **Responsive Role** | Difficult (Breaks easily). | Great for components (Navbars, Lists). | Great for full page layouts. |
 | **Overlap** | No (unless negative margins). | No. | Yes (Items can share cells). |
+### The Land Developer: Plotting Your Grid
+
+When you use **CSS Grid**, you stop being a bricklayer (placing one brick after another like in Flexbox) and become a Land Developer. You look at an empty field (the web page) and draw lines on the ground to divide it into specific "lots" or "cells." Only after you have drawn these lines do you drop your content into them.
+
+The magic of Grid is that you can define both **Columns** (vertical) and **Rows** (horizontal) at the same time.
+
+### The Key Concept: The `fr` Unit
+
+In the example below, you will see a unit called `fr`. This stands for **"fraction."**
+If you write `1fr 1fr 1fr`, you are telling the browser: "I have 3 columns. Please calculate the total available space and give each column exactly one fraction (1/3) of the space." It saves you from doing math with percentages (33.333%).
+
+### Code Example 1: The "Auto" Gallery
+
+This is the most common use of Grid: creating a perfect table of items with equal width and spacing.
+
+**What happens in this code:**
+
+1.  We turn the container into a Grid.
+2.  We command it to have **3 equal columns**.
+3.  We command it to have a **20px gap** (gutters) between all items.
+4.  We do *not* define the rows. The Grid is smart; it will automatically create as many new rows as it needs to fit the items.
+
+<!-- end list -->
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            background-color: #333;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: white;
+            padding: 40px;
+            font-size: 30px;
+            text-align: center;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The 3-Column Grid</h1>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+</body>
+</html>
+```
+---
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .box {
+            background-color: skyblue;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid navy;
+        }
+
+        .header {
+            background-color: navy;
+            color: white;
+            grid-column: span 3;
+        }
+
+        .sidebar {
+            grid-row: span 2;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>The Website Layout</h1>
+
+    <div class="layout">
+        <div class="box header">Header (Spans 3 Cols)</div>
+        
+        <div class="box sidebar">Sidebar (Spans 2 Rows)</div>
+        <div class="box">Main Content A</div>
+        <div class="box">Main Content B</div>
+        <div class="box">Footer A</div>
+        <div class="box">Footer B</div>
+    </div>
+
+</body>
+</html>
+```
 ---
 ---
