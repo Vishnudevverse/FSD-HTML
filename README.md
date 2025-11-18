@@ -407,3 +407,87 @@ Here is a complete example showing all three lists in action. We have a shopping
 | **Importance of Order** | None. | Critical. | The pair is linked, order within list is flexible. |
 ---
 ---
+### The Theory of Rectangles: Every Element is a Box
+
+If there is one concept that separates a beginner from a professional web developer, it is the **CSS Box Model**.
+
+Here is the secret: **Every single thing on a web page is a rectangular box.** Even if you draw a circle using CSS, the browser still treats it as a square box in terms of space. The letter "A", an image, a button, or a navigation bar—they are all boxes stacked next to each other or inside one another.
+
+When you try to move an element or change its size, you aren't just changing the content; you are adjusting a complex system of layers that wrap around that content. This system is the **Box Model**.
+
+[Image of CSS Box Model diagram]
+
+### The Analogy: A Framed Photograph on a Wall
+
+To understand the four layers of the Box Model, imagine you are hanging a framed photograph on a wall in an art gallery.
+
+1.  **Content (The Photo):**
+    This is the actual image or text you want people to see. In HTML, this is your text or `<img>`. Its size is defined by `width` and `height`.
+
+2.  **Padding (The Matte/Passe-partout):**
+    In a nice picture frame, you don't smash the glass right onto the photo. You have a cardboard border (matte) inside the frame to give the photo "breathing room."
+
+      * **In CSS:** Padding is the space **inside** the border. It pushes the border away from the content. It takes on the background color of the element.
+
+3.  **Border (The Frame):**
+    This is the physical wooden or metal frame holding the glass. It is the boundary line.
+
+      * **In CSS:** This is the visible line (solid, dotted, dashed) that surrounds the padding and content.
+
+4.  **Margin (The Wall Space):**
+    You never hang two pictures touching each other; you leave space on the wall between frames so they don't look cluttered.
+
+      * **In CSS:** Margin is the space **outside** the border. It pushes other elements away. It is always transparent (invisible).
+
+### How They Affect Layout (The Math)
+
+This is the most important part for your exam. When you say `width: 200px`, you are **only setting the width of the Content**. You are not setting the width of the whole visible box.
+
+If you have a box with:
+
+  * Content Width: 200px
+  * Padding: 20px (Left + Right = 40px)
+  * Border: 5px (Left + Right = 10px)
+  * Margin: 10px (Left + Right = 20px)
+
+The total space this element takes up on the screen is **270px**, not 200px. This accumulation of size is what breaks layouts if you aren't careful.
+
+### Code Example: Seeing the Layers
+
+In this example, we create a box. We color the background light blue so you can see that the **Padding** is colored (part of the box), but the **Margin** is white (outside the box).
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: 300px;
+            border: 10px solid navy;
+            padding: 50px;
+            margin: 50px;
+            background-color: lightblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        I am the Content
+    </div>
+
+</body>
+</html>
+```
+
+### Comparison: The Four Layers
+
+| Layer | Location | Visibility | Does it add to the total size? | Key Function |
+| :--- | :--- | :--- | :--- | :--- |
+| **Content** | Center | Visible | Yes | Holds text, images, or video. |
+| **Padding** | Between Content & Border | Visible (Background Color) | Yes | Creates internal breathing room. |
+| **Border** | Between Padding & Margin | Visible (Color/Style) | Yes | Defines the edge/boundary. |
+| **Margin** | Outside the Border | Invisible (Transparent) | Yes (It takes up space) | Creates external separation from neighbors. |
+---
+---
