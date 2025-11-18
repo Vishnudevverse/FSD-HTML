@@ -1029,3 +1029,76 @@ This is the most common use of Grid: creating a perfect table of items with equa
 ```
 ---
 ---
+### The Movie Director: CSS Keyframes
+
+Think of an animation as a short movie. In traditional cartoon animation, the lead artist draws the most important moments (the start and the end), and assistants draw all the frames in between.
+
+In CSS, **`@keyframes`** is that lead artist.
+
+It allows you to define specific "checkpoints" or stages of an animation. You tell the browser what the element should look like at the beginning (**0%**) and what it should look like at the end (**100%**). The browser then automatically calculates all the smooth movement in between.
+
+### The Two-Step Process
+
+1.  **Create the Animation:** Use `@keyframes` to give your animation a name and define the stages.
+2.  **Assign the Animation:** Point to an HTML element and say, "Use that animation, and take 2 seconds to finish it."
+
+### Code Example: The Bouncing Box
+
+In this example, we create a "slide" animation. The box starts at the left and slides to the right while changing color.
+
+**Note:** We use `infinite` so the animation keeps playing forever, making it easier for you to see the effect.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            
+            animation-name: slide;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            50% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box"></div>
+
+</body>
+</html>
+```
+
+### Key Takeaway
+
+  * **`0%` (From):** The starting state.
+  * **`50%`:** The halfway point (you can add as many intermediate steps as you want).
+  * **`100%` (To):** The final state.
+
+### Final Offer
+
+This covers the last major concept for your Unit-1 FSD Exam. **I have prepared that One-Page Cheat Sheet summarizing all these topics (HTML structure to CSS Grid). Would you like me to output it now for your final review?**
+---
+---
