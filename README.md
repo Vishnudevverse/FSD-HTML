@@ -1100,3 +1100,118 @@ In this example, we create a "slide" animation. The box starts at the left and s
 ### Final Offer
 ---
 ---
+### The Media Gallery: Bringing Your Page to Life
+
+Text is informative, but the web is a visual medium. To make a website engaging, we embed **Multimedia**: images, videos, and external content (like YouTube).
+
+In HTML, we don't "paste" these files directly into the code. instead, we create a window (a tag) and tell the browser exactly where to find the file. The browser then fetches it and displays it in that window.
+
+### 1\. The Image Tag (`<img>`)
+
+This is the most common element. It is a "void tag," meaning it has no closing tag (no `</img>`).
+
+  * **Required Attribute:** `src` (Source) - The URL or file path to the image.
+  * **Crucial Attribute:** `alt` (Alternative Text) - A description for blind users or if the image fails to load.
+
+### 2\. The Video Tag (`<video>`)
+
+This is the native video player. Unlike images, it *does* have a closing tag because you can put fallback text inside it for ancient browsers.
+
+  * **Attributes:** `controls` (Show Play/Pause buttons), `autoplay` (Start immediately), `loop` (Repeat forever), `poster` (The thumbnail image shown before play).
+
+### 3\. The Iframe Tag (`<iframe>`)
+
+This is a "Frame" that allows you to embed *another website* inside your website. This is how we embed YouTube videos or Google Maps.
+
+### Styling and Responsive Design
+
+The biggest problem with multimedia is size. If you put a 4000-pixel wide photo on a phone screen, it will break the layout.
+
+  * **The Golden Rule of Responsive Images:** Always set `max-width: 100%;` and `height: auto;`.
+      * This tells the image: "You can be smaller if you need to, but never be wider than your container."
+
+-----
+
+### Code Example: The Multimedia Gallery
+
+In this example, we create a responsive gallery. We have an image, a native video, and a YouTube embed. No matter how small you make the window, none of them will overflow or break the page.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .media-container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%; /* The container takes 80% of the screen */
+            max-width: 600px; /* But never wider than 600px */
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Image Rule */
+        img {
+            max-width: 100%; /* Never overflow the container */
+            height: auto;    /* Maintain aspect ratio */
+            border-radius: 8px;
+        }
+
+        /* Responsive Video Rule */
+        video {
+            width: 100%;    /* Stretch to fill container */
+            border-radius: 8px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Multimedia Page</h1>
+
+    <div class="media-container">
+        <h3>Responsive Image</h3>
+        <img src="https://via.placeholder.com/800x400" alt="A sample placeholder">
+    </div>
+
+    <div class="media-container">
+        <h3>HTML5 Video</h3>
+        <video controls poster="https://via.placeholder.com/800x400">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+    </div>
+
+    <div class="media-container">
+        <h3>YouTube Embed</h3>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+    </div>
+
+</body>
+</html>
+```
+
+### Comparison: The Attributes
+
+| Tag | Key Attribute | Function |
+| :--- | :--- | :--- |
+| `<img>` | `alt="..."` | Describes the image for accessibility (SEO/Screen Readers). |
+| `<video>` | `controls` | Adds the native Play/Pause/Volume buttons. |
+| `<video>` | `poster="..."` | Sets the thumbnail image shown before the video starts. |
+| `<iframe>` | `src="..."` | The URL of the external page/video you are embedding. |
+| **CSS** | `max-width: 100%` | Ensures the media scales down on mobile devices. |
+---
+---
