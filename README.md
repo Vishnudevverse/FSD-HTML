@@ -491,3 +491,74 @@ In this example, we create a box. We color the background light blue so you can 
 | **Margin** | Outside the Border | Invisible (Transparent) | Yes (It takes up space) | Creates external separation from neighbors. |
 ---
 ---
+### The Teleporter: Connecting Your World
+
+If HTML pages are houses, then **Links** are the doors, bridges, and teleporters that connect them. Without links, the "Web" would just be a collection of isolated islands. The technical name for a link is a **Hyperlink**, and we create them using the **Anchor Tag** (`<a>`).
+
+When you build a website, you need to master two types of travel:
+
+1.  **International Travel (External Links):** Sending the user away to a completely different website (like Google or Facebook).
+2.  **Domestic Travel (Internal Links):** sending the user to another room in your own house (like your "Contact" page) or jumping to the basement of the *current* page (a Bookmark).
+
+### 1\. External Links: Leaving the Building
+
+An external link points to a resource outside your domain. Since you are sending the user away, you often want to open this in a new browser tab so they don't lose your page entirely.
+
+  * **The Key Attribute:** `href` (Hypertext Reference). This is the destination address. For external links, this must be an **Absolute URL** (it must start with `https://`).
+  * **The Behavior Attribute:** `target`. If you set this to `_blank`, the browser opens a fresh tab.
+
+### 2\. Internal Links: The Elevator
+
+Internal links keep the user within your own territory. These are faster because the browser doesn't need to look up a new server address.
+
+  * **Relative Links:** Pointing to a file nearby, like `href="about.html"`.
+  * **Bookmarks (Anchors):** This is like an elevator that jumps to a specific floor. You mark a destination with an `id` (e.g., `id="footer"`) and link to it using a hash symbol (`href="#footer"`).
+
+### Code Example: The Portal Gun
+
+Here is a clean example showing an external link to Google and an internal bookmark that jumps to the bottom of the page.
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>The Link Demo</h1>
+
+    <a href="https://www.google.com" target="_blank">Go to Google</a>
+
+    <br>
+
+    <a href="#bottom">Jump to Bottom</a>
+
+    <p>
+        (Imagine a lot of text here...)
+        <br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
+    </p>
+
+    <h2 id="bottom">Welcome to the Bottom</h2>
+    <a href="#">Jump to Top</a>
+
+</body>
+</html>
+```
+
+### Comparison: External vs. Internal
+
+| Feature | External Link | Internal Link (Bookmark) |
+| :--- | :--- | :--- |
+| **Destination** | A different website entirely. | The same page or a file in your folder. |
+| **URL Style** | Absolute (`https://www.site.com`) | Relative (`#section` or `file.html`) |
+| **Key Attribute** | `target="_blank"` (Recommended) | `id="name"` (Required for bookmarks) |
+| **Speed** | Slower (Requires DNS lookup) | Instant (Browser just scrolls) |
+| **Analogy** | Taking a flight to another country. | Taking the elevator to the lobby. |
+
+### Important Attributes Summary
+
+  * **`href`**: The most critical attribute. No `href`, no link. It tells the browser *where* to go.
+  * **`target`**: Tells the browser *how* to open the link (New tab vs. Same tab).
+  * **`id`**: Acts as the "landing pad" for internal bookmark links.
+  * **`title`**: Provides a tooltip when you hover over the link (good for accessibility).
+---
+---
